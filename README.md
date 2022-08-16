@@ -1,26 +1,26 @@
 #### Implement some data structures in Rust
 
 ##### List DS:
-[  ] Array List (Vec)  
-[  ] Bubble Sort  
-[  ] BFSGraphMatrix  
-[  ] BTBFS  
-[  ] BTInOrder  
-[  ] BTPostOrder  
-[  ] BTPreOrder  
-[  ] BinarySearchList  
-[  ] CompareBinaryTrees  
-[  ] DFSGraphList  
-[  ] DFSOnBST  
-[  ] DoublyLinkedList  
-[  ] LinearSearchList  
-[  ] Map  
-[  ] MazeSolver  
-[  ] Queue  
-[  ] QuickSort  
-[  ] Stack  
-[  ] Trie  
-[  ] TwoCrystalBalls  
+- [ ] Array List (Vec)  
+- [ ] Bubble Sort  
+- [ ] BFSGraphMatrix  
+- [ ] BTBFS  
+- [ ] BTInOrder  
+- [ ] BTPostOrder  
+- [ ] BTPreOrder  
+- [ ] BinarySearchList  
+- [ ] CompareBinaryTrees  
+- [ ] DFSGraphList  
+- [ ] DFSOnBST  
+- [ ] DoublyLinkedList  
+- [ ] LinearSearchList  
+- [ ] Map  
+- [ ] MazeSolver  
+- [ ] Queue  
+- [ ] QuickSort  
+- [ ] Stack  
+- [ ] Trie  
+- [ ] TwoCrystalBalls  
 
 
 ##### FAQs:
