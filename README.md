@@ -1,7 +1,7 @@
 #### Implement some data structures in Rust
 
 ##### List DS:
-- [ ] Array List (Vec)  
+- [ ] [Array List (Vec)](https://github.com/LeVuMinhHuy/DSIR/tree/master/src/vec)  
 - [ ] Bubble Sort  
 - [ ] BFSGraphMatrix  
 - [ ] BTBFS  
