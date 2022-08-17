@@ -8,8 +8,8 @@
 #### Todo:
 
 - [ ] Create a new vector
-  - [  ] `Vec::new`
-  - [  ] macro `vec!`
+  - [ ] `Vec::new`
+  - [ ] macro `vec!`  
 
 - [ ] Push values onto the end of a vector (which will grow the vector as needed)
 
@@ -21,11 +21,11 @@
 #### Examples:
 
 - Create: 
-```
+```rust
 let v: Vec<i32> = Vec::new();
 ```
 
-```
+```rust
 let v: Vec<i32> = vec![];
 
 let v = vec![1, 2, 3, 4, 5];
@@ -34,7 +34,7 @@ let v = vec![0; 10]; // ten zeroes
 ```
 
 - Push:
-```
+```rust
 let mut v = vec![1, 2];
 
 v.push(3);
@@ -43,7 +43,7 @@ v.push(3);
 ```
 
 - Pop:
-```
+```rust
 let mut v = vec![1, 2];
 let two = v.pop();
 
@@ -51,7 +51,7 @@ let two = v.pop();
 ```
 
 - Indexing
-```
+```rust
 let mut v = vec![1, 2, 3];
 let three = v[2];
 v[1] = v[1] + 5;
