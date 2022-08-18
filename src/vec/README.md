@@ -65,9 +65,14 @@ v[1] = v[1] + 5;
 2. Will discuss about heap more in here while I'm implementing
 
 
-#### What I learned:
+#### What I learned - Progress:
+
+- [18.08.2022] Read the implementation of Rustonomicon and try to understand lifetime from Crust of Rust series on youtube
 
 
 #### References:
 - [Module std::vec](https://doc.rust-lang.org/std/vec/index.html)  
 - [Struct std::vec::Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html)
+- [Implement by Rust team - Source](https://doc.rust-lang.org/src/alloc/vec/mod.rs.html)
+- [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
+- [Crust of Rust: Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858)
