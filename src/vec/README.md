@@ -60,14 +60,28 @@ v[1] = v[1] + 5;
 ```
 
 #### Discuss:
-1. There are still more actions we can do with Vector, but I won't implement them in here for the simplicity
+1. There are still more actions we can do with Vector, but I won't implement them in here for the sake of simplicity
 
-2. Will discuss about heap more in here while I'm implementing
+2. Will discuss about related problems more in section [#til](what-i-learned) below through the implementation progress
 
 
-#### What I learned - Progress:
+#### What I learned:
 
+###### Progress
 - [18.08.2022] Read the implementation of Rustonomicon and try to understand lifetime from Crust of Rust series on youtube
+- [19.08.2022] Read Rustonomicon about *Drop Check*, watch [Let's Get Rusty](https://www.youtube.com/c/LetsGetRusty) about *Lifetime*, *Smart pointer*, *Defer*, *Drop Trait*, watch a bit Crust to Rust.
+
+
+###### Need to cover:
+
+- Next day:  
+  - [ ] Read all the Rustonomicon
+  - [ ] Try to understand everything in this Crust of Rust: [Smart Pointers and Interior Mutability](https://youtu.be/8O0Nt9qY_vo)
+
+- Statuses:
+  - Lifetime:  ![](https://progress-bar.dev/80)
+  - Smart pointer:  ![](https://progress-bar.dev/60)
+  - Drop check: ![](https://progress-bar.dev/01)
 
 
 #### References:
@@ -76,3 +90,4 @@ v[1] = v[1] + 5;
 - [Implement by Rust team - Source](https://doc.rust-lang.org/src/alloc/vec/mod.rs.html)
 - [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
 - [Crust of Rust: Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858)
+- [Let's Get Rusty](https://www.youtube.com/c/LetsGetRusty)
