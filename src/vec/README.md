@@ -62,7 +62,7 @@ v[1] = v[1] + 5;
 #### Discuss:
 1. There are still more actions we can do with Vector, but I won't implement them in here for the sake of simplicity
 
-2. Will discuss about related problems more in section [#til](what-i-learned) below through the implementation progress
+2. Will discuss about related problems more in section [#til](#what-i-learned) below through the implementation progress
 
 
 #### What I learned:
