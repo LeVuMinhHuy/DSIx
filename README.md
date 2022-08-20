@@ -1,7 +1,7 @@
 #### Implement some data structures in Rust
 
 ##### List DS:
-- [ ] [Array List (Vec)](https://github.com/LeVuMinhHuy/DSIR/tree/master/src/vec)  
+- [ ] [Array List (Vec)](https://github.com/LeVuMinhHuy/DSIR/tree/master/vec)  
 - [ ] Bubble Sort  
 - [ ] BFSGraphMatrix  
 - [ ] BTBFS  
@@ -31,7 +31,7 @@ Because i'm suck of data structures (too lazy while i was at uni)
 Inspired by one of [ThePrimeagen](https://github.com/ThePrimeagen)' streams on Twitch, which he implemented these in TS ([this stream](https://www.twitch.tv/videos/1546395342?filter=archives&sort=time))
 
 - Why Rust ?  
-Because Rust is the best (someone said that)
+Because Rust is the best (stackoverflow said that)
 
 - The progress ?  
-Code a bit every morning (I hope)
+Code a bit every morning (i hope)
