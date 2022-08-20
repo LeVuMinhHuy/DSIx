@@ -70,18 +70,24 @@ v[1] = v[1] + 5;
 ###### Progress
 - [18.08.2022] Read the implementation of Rustonomicon and try to understand lifetime from Crust of Rust series on youtube
 - [19.08.2022] Read Rustonomicon about *Drop Check*, watch [Let's Get Rusty](https://www.youtube.com/c/LetsGetRusty) about *Lifetime*, *Smart pointer*, *Defer*, *Drop Trait*, watch a bit Crust to Rust.
+- [20.08.2022] *Cargo workspace*, *Raw pointer*, *Rc*, *RefCell*, init struct vector, *NonNull*, *#[test]*, watch [Implementing Rust's Vec From Scratch - Ryan Levick](https://youtu.be/3OL95gZgPWA), fix structure to cargo workspace, implement `MyVec::new` with dangling pointer NonNull, write tests
 
 
 ###### Need to cover:
 
 - Next day:  
-  - [ ] Read all the Rustonomicon
-  - [ ] Try to understand everything in this Crust of Rust: [Smart Pointers and Interior Mutability](https://youtu.be/8O0Nt9qY_vo)
+  - [ ] Why we need raw pointer in vec struct ? 
+  - [ ] Why NonNull ?
+  - [ ] Why capacity after first re-alloc = 4 and grow by x2 ?
+  - [ ] Implement `push` fn
+
+  - [ ] Move [#til](#what-i-learned) to `docs` folder for easier to follow and store explanations
 
 - Statuses:
   - Lifetime:  ![](https://progress-bar.dev/80)
   - Smart pointer:  ![](https://progress-bar.dev/60)
   - Drop check: ![](https://progress-bar.dev/01)
+  - Raw pointer: ![](https://progress-bar.dev/10)
 
 
 #### References:
@@ -91,3 +97,4 @@ v[1] = v[1] + 5;
 - [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
 - [Crust of Rust: Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858)
 - [Let's Get Rusty](https://www.youtube.com/c/LetsGetRusty)
+- [Implementing Rust's Vec From Scratch - Ryan Levick](https://youtu.be/3OL95gZgPWA)

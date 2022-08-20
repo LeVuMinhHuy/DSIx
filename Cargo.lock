@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "DS"
+name = "vec"
 version = "0.1.0"
