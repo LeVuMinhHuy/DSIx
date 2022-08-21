@@ -5,3 +5,7 @@ version = 3
 [[package]]
 name = "vec"
 version = "0.1.0"
+
+[[package]]
+name = "vec_with_box"
+version = "0.1.0"

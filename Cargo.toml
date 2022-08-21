@@ -1,5 +1,6 @@
 [workspace]
 
 members = [
-  "vec"
+  "vec",
+  "vec_with_box"
 ]
