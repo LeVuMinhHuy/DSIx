@@ -72,7 +72,8 @@ v[1] = v[1] + 5;
 - [19.08.2022] Read Rustonomicon about *Drop Check*, watch [Let's Get Rusty](https://www.youtube.com/c/LetsGetRusty) about *Lifetime*, *Smart pointer*, *Defer*, *Drop Trait*, watch a bit Crust to Rust.
 - [20.08.2022] *Cargo workspace*, *Raw pointer*, *Rc*, *RefCell*, init struct vector, *NonNull*, *#[test]*, watch [Implementing Rust's Vec From Scratch - Ryan Levick](https://youtu.be/3OL95gZgPWA), fix structure to cargo workspace, implement `MyVec::new` with dangling pointer NonNull, write tests
 - [21.08.2022] Write *push* function, using *NonNull<T>*, *alloc::alloc*, learn about *alloc::Layout*, test about using *Option<Box<T>>* instead of *NonNull<T>* and it worked - why ? maybe we need to implement more to understand
-
+- [22.08.2022] Update docs
+- [23.08.2022] Still watch [Ryan Levick](https://youtu.be/3OL95gZgPWA) about `push` function
 
 
 ###### Need to cover:
