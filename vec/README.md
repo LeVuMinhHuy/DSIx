@@ -74,6 +74,7 @@ v[1] = v[1] + 5;
 - [21.08.2022] Write *push* function, using *NonNull<T>*, *alloc::alloc*, learn about *alloc::Layout*, test about using *Option<Box<T>>* instead of *NonNull<T>* and it worked - why ? maybe we need to implement more to understand
 - [22.08.2022] Update docs
 - [23.08.2022] Still watch [Ryan Levick](https://youtu.be/3OL95gZgPWA) about `push` function
+- [24.08.2022] Rest day... too much tasks from company... i know, i know, i don't have to do all of that. will finish `push` function tomorrow. i'm interested in some leetcode too but i will keep implementing this repo every morning i promise
 
 
 ###### Need to cover:
