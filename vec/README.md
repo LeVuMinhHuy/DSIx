@@ -75,6 +75,7 @@ v[1] = v[1] + 5;
 - [22.08.2022] Update docs
 - [23.08.2022] Still watch [Ryan Levick](https://youtu.be/3OL95gZgPWA) about `push` function
 - [24.08.2022] Rest day... too much tasks from company... i know, i know, i don't have to do all of that. will finish `push` function tomorrow. i'm interested in some leetcode too but i will keep implementing this repo every morning i promise
+- [25.08.2022] Done push if length < capacity (raw pointer offset a len and write data)
 
 
 ###### Need to cover:

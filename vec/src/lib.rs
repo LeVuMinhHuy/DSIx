@@ -42,6 +42,11 @@ impl<T> MyVec<T> {
 
             // update len of myvec to 1
             self.len = 1
+        } else if self.len < self.capacity {
+            self.ptr.as_ptr().add(self.len).write(item)
+        } else {
+            // TODO: realloc
+            todo!()
         }
     }
 
