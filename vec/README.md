@@ -7,11 +7,11 @@
 
 #### Todo:
 
-- [ ] Create a new vector
-  - [ ] `Vec::new`
+- [x] Create a new vector
+  - [x] `Vec::new`
   - [ ] macro `vec!`  
 
-- [ ] Push values onto the end of a vector (which will grow the vector as needed)
+- [x] Push values onto the end of a vector (which will grow the vector as needed)
 
 - [ ] Pop values out of the vector 
 
@@ -76,12 +76,16 @@ v[1] = v[1] + 5;
 - [23.08.2022] Still watch [Ryan Levick](https://youtu.be/3OL95gZgPWA) about `push` function
 - [24.08.2022] Rest day... too much tasks from company... i know, i know, i don't have to do all of that. will finish `push` function tomorrow. i'm interested in some leetcode too but i will keep implementing this repo every morning i promise
 - [25.08.2022] Done push if length < capacity (raw pointer offset a len and write data)
+- [26.08.2022] Done push if length == capacity, realloc, it's having the error `[Error] realloc(): invalid next size` in the 3rd time realloc, need to check that next day. also check again the drop trait
 
 
 ###### Need to cover:
 
 - Next day:  
-  - [ ] Finish `push` fn 
+  - [ ] Finish `push` fn ![](https://progress-bar.dev/88)
+  - [ ] Check error: `[Error] realloc(): invalid next size`, ask if needed
+  - [ ] Check trait `Drop`
+
 
 - Statuses:
   - Lifetime:  ![](https://progress-bar.dev/80)
