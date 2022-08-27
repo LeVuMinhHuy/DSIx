@@ -15,7 +15,7 @@
 
 - [ ] Pop values out of the vector 
 
-- [ ] Indexing, meaning we are able to get data from vector by its index
+- [x] Indexing, meaning we are able to get data from vector by its index
 
 
 #### Examples:
@@ -77,21 +77,22 @@ v[1] = v[1] + 5;
 - [24.08.2022] Rest day... too much tasks from company... i know, i know, i don't have to do all of that. will finish `push` function tomorrow. i'm interested in some leetcode too but i will keep implementing this repo every morning i promise
 - [25.08.2022] Done push if length < capacity (raw pointer offset a len and write data)
 - [26.08.2022] Done push if length == capacity, realloc, it's having the error `[Error] realloc(): invalid next size` in the 3rd time realloc, need to check that next day. also check again the drop trait
+- [27.08.2022] Fix `[Error] realloc(): invalid next size` (realloc with wrong size!), learn *size* and *align*, finish `push` function, `Drop` trait, `get` by index, check memory leak (no leaks are possible), finish [Ryan Levick](https://youtu.be/3OL95gZgPWA) tutorial
 
 
 ###### Need to cover:
 
 - Next day:  
-  - [ ] Finish `push` fn ![](https://progress-bar.dev/88)
-  - [ ] Check error: `[Error] realloc(): invalid next size`, ask if needed
-  - [ ] Check trait `Drop`
+  - write `pop` fn
+  - implement get index by `[]`
+  - check `vec` implementation in [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
 
 
 - Statuses:
   - Lifetime:  ![](https://progress-bar.dev/80)
   - Smart pointer:  ![](https://progress-bar.dev/60)
   - Drop check: ![](https://progress-bar.dev/01)
-  - Raw pointer: ![](https://progress-bar.dev/60)
+  - Raw pointer: ![](https://progress-bar.dev/65)
 
 
 #### References:

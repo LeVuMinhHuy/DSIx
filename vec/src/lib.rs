@@ -41,31 +41,35 @@ impl<T> MyVec<T> {
 
             // allocate a layout of data onto heap
             let ptr: *mut T = unsafe { alloc(new_space_in_heap) as *mut T };
+
             // init new NonNull raw pointer with the pointer to new space data in heap
             // store to myvec.ptr
-            self.ptr = NonNull::new(ptr).expect("NonNull::new error");
+            let ptr = NonNull::new(ptr).expect("NonNull::new error");
 
             // now we have enough space for store item, let's store it
             // we convert myvec ptr back to raw pointer and write item to the heap
             // note: why we don't do this: `*self.ptr.as_ptr() = item` ?
+
             unsafe {
-                self.ptr.as_ptr().write(item);
+                ptr.as_ptr().write(item);
             }
+
+            self.ptr = ptr;
+
             // update capacity of myvec to 4
             self.capacity = 4;
 
             // update len of myvec to 1
-            self.len = 1
+            self.len = 1;
         } else if self.len < self.capacity {
             unsafe { self.ptr.as_ptr().add(self.len).write(item) }
 
             // increase len by 1
             self.len += 1;
-        } else {
+        } else if self.len == self.capacity {
             // get block of memory from size (all vector) and alignment of T
             let size = std::mem::size_of::<T>() * self.capacity;
             let align = std::mem::align_of::<T>();
-            size.checked_add(size % align).expect("Cannot alloc!");
 
             let layout = Layout::from_size_align(size, align).expect("Cannot get layout of T");
 
@@ -75,21 +79,17 @@ impl<T> MyVec<T> {
                 .checked_mul(2)
                 .expect("Muliple overflow capacity");
 
-            println!(
-                "size: {}, align: {}, new_capacity: {}",
-                size, align, new_capacity
-            );
-
             let ptr = unsafe {
-                println!("{:?}", layout);
-
-                let realloc_ptr: *mut T =
-                    realloc(self.ptr.as_ptr() as *mut u8, layout, new_capacity) as *mut T;
+                let realloc_ptr: *mut T = realloc(
+                    self.ptr.as_ptr() as *mut u8,
+                    layout,
+                    new_capacity * std::mem::size_of::<T>(),
+                ) as *mut T;
 
                 let ptr = NonNull::new(realloc_ptr).expect("NonNull::new error");
 
-                // Store new item to reallocated heap
-                ptr.as_ptr().write(item);
+                // Store new item to last location in reallocated heap
+                ptr.as_ptr().add(self.len).write(item);
 
                 ptr
             };
@@ -101,6 +101,18 @@ impl<T> MyVec<T> {
 
             // assign new capacity
             self.capacity = new_capacity;
+        }
+    }
+
+    //pub fn pop(&self) -> Option<&T> {
+
+    //}
+
+    pub fn get(&self, index: usize) -> Option<&T> {
+        if index > self.len {
+            None
+        } else {
+            Some(unsafe { &*self.ptr.as_ptr().add(index) })
         }
     }
 
@@ -135,8 +147,9 @@ mod tests {
 
     #[test]
     fn my_vec() {
-        let mut my_vec_sample = MyVec::<u32>::new();
+        let mut my_vec_sample = MyVec::<usize>::new();
 
+        my_vec_sample.push(0);
         my_vec_sample.push(1);
         my_vec_sample.push(2);
         my_vec_sample.push(3);
@@ -144,16 +157,15 @@ mod tests {
         my_vec_sample.push(5);
         my_vec_sample.push(6);
         my_vec_sample.push(7);
+        my_vec_sample.push(8);
 
-        // ======================
-        // This causes error
-        // my_vec_sample.push(8);
-        // my_vec_sample.push(9);
+        assert_eq!(my_vec_sample.capacity(), 16);
+        assert_eq!(my_vec_sample.len(), 9);
 
-        //TODO: [Error] realloc(): invalid next size
-        // when realloc more than 2
+        for n in 0..my_vec_sample.len() {
+            assert_eq!(my_vec_sample.get(n), Some(&n))
+        }
 
-        assert_eq!(my_vec_sample.capacity(), 8);
-        assert_eq!(my_vec_sample.len(), 7)
+        assert_eq!(my_vec_sample.get(1000), None);
     }
 }
