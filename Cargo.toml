@@ -2,5 +2,4 @@
 
 members = [
   "vec",
-  "vec_with_box"
 ]
