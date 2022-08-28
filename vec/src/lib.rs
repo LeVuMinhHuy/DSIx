@@ -13,13 +13,19 @@ pub struct MyVec<T> {
 // TODO: need to check again this drop trait to understand
 impl<T> Drop for MyVec<T> {
     fn drop(&mut self) {
-        unsafe {
-            std::ptr::drop_in_place(std::slice::from_raw_parts_mut(self.ptr.as_ptr(), self.len));
-            let size = std::mem::size_of::<T>() * self.capacity;
-            let align = std::mem::align_of::<T>();
+        if self.capacity != 0 {
+            unsafe {
+                std::ptr::drop_in_place(std::slice::from_raw_parts_mut(
+                    self.ptr.as_ptr(),
+                    self.len,
+                )); // <- TODO: read the Rustonomicon implementation for understanding
 
-            let layout = Layout::from_size_align(size, align).expect("Cannot get layout of T");
-            dealloc(self.ptr.as_ptr() as *mut u8, layout)
+                let size = std::mem::size_of::<T>() * self.capacity;
+                let align = std::mem::align_of::<T>();
+
+                let layout = Layout::from_size_align(size, align).expect("Cannot get layout of T");
+                dealloc(self.ptr.as_ptr() as *mut u8, layout)
+            }
         }
     }
 }
@@ -48,7 +54,7 @@ impl<T> MyVec<T> {
 
             // now we have enough space for store item, let's store it
             // we convert myvec ptr back to raw pointer and write item to the heap
-            // note: why we don't do this: `*self.ptr.as_ptr() = item` ?
+            // note: why we don't do this: `*self.ptr.as_ptr() = item` <- understood
 
             unsafe {
                 ptr.as_ptr().write(item);
@@ -104,12 +110,17 @@ impl<T> MyVec<T> {
         }
     }
 
-    //pub fn pop(&self) -> Option<&T> {
-
-    //}
+    pub fn pop(&mut self) -> Option<T> {
+        if self.len == 0 {
+            None
+        } else {
+            self.len -= 1;
+            Some(unsafe { self.ptr.as_ptr().add(self.len).read() })
+        }
+    }
 
     pub fn get(&self, index: usize) -> Option<&T> {
-        if index > self.len {
+        if index >= self.len {
             None
         } else {
             Some(unsafe { &*self.ptr.as_ptr().add(index) })
@@ -147,23 +158,31 @@ mod tests {
 
     #[test]
     fn my_vec() {
-        let mut my_vec_sample = MyVec::<usize>::new();
+        let mut my_vec_sample = MyVec::<String>::new();
 
-        my_vec_sample.push(0);
-        my_vec_sample.push(1);
-        my_vec_sample.push(2);
-        my_vec_sample.push(3);
-        my_vec_sample.push(4);
-        my_vec_sample.push(5);
-        my_vec_sample.push(6);
-        my_vec_sample.push(7);
-        my_vec_sample.push(8);
+        my_vec_sample.push(String::from("string_0"));
+        my_vec_sample.push(String::from("string_1"));
+        my_vec_sample.push(String::from("string_2"));
+        my_vec_sample.push(String::from("string_3"));
+        my_vec_sample.push(String::from("string_4"));
+        my_vec_sample.push(String::from("string_5"));
+        my_vec_sample.push(String::from("string_6"));
+        my_vec_sample.push(String::from("string_7"));
+        my_vec_sample.push(String::from("string_8"));
+        my_vec_sample.push(String::from("string_9"));
+
+        let pop_data = my_vec_sample.pop();
 
         assert_eq!(my_vec_sample.capacity(), 16);
         assert_eq!(my_vec_sample.len(), 9);
 
+        assert_eq!(pop_data, Some(String::from("string_9")));
+
         for n in 0..my_vec_sample.len() {
-            assert_eq!(my_vec_sample.get(n), Some(&n))
+            assert_eq!(
+                my_vec_sample.get(n),
+                Some(&(String::from("string_") + &n.to_string()))
+            )
         }
 
         assert_eq!(my_vec_sample.get(1000), None);

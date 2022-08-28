@@ -13,7 +13,7 @@
 
 - [x] Push values onto the end of a vector (which will grow the vector as needed)
 
-- [ ] Pop values out of the vector 
+- [x] Pop values out of the vector 
 
 - [x] Indexing, meaning we are able to get data from vector by its index
 
@@ -78,22 +78,24 @@ v[1] = v[1] + 5;
 - [25.08.2022] Done push if length < capacity (raw pointer offset a len and write data)
 - [26.08.2022] Done push if length == capacity, realloc, it's having the error `[Error] realloc(): invalid next size` in the 3rd time realloc, need to check that next day. also check again the drop trait
 - [27.08.2022] Fix `[Error] realloc(): invalid next size` (realloc with wrong size!), learn *size* and *align*, finish `push` function, `Drop` trait, `get` by index, check memory leak (no leaks are possible), finish [Ryan Levick](https://youtu.be/3OL95gZgPWA) tutorial
+- [28.08.2022] Done `pop` function, understand dereference assign raw pointer (will drop its current value and that mem must be valid -> the correct way is using ptr::write), check github profiles of rust team members, look through their blogs and be inspired by them. e.g. [Ralf Jung](https://research.ralfj.de/) with his thesis about Rust lang, or [Matklad](https://matklad.github.io/resume/) and his resume, ... there are a ton of people full of enthusiasm out there coding beautiful things
 
 
 ###### Need to cover:
 
 - Next day:  
-  - write `pop` fn
-  - implement get index by `[]`
-  - check `vec` implementation in [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
+  - [ ] learn about macro for `vec!` new
+  - [ ] implement get index by `[]`
+  - [ ] check `vec` implementation in [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
 
 
 - Statuses:
   - Lifetime:  ![](https://progress-bar.dev/80)
   - Smart pointer:  ![](https://progress-bar.dev/60)
   - Drop check: ![](https://progress-bar.dev/01)
-  - Raw pointer: ![](https://progress-bar.dev/65)
+  - Raw pointer: ![](https://progress-bar.dev/75)
 
+- Record a video for re-implement and explain what I've learned
 
 #### References:
 - [Module std::vec](https://doc.rust-lang.org/std/vec/index.html)  
