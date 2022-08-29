@@ -9,7 +9,7 @@
 
 - [x] Create a new vector
   - [x] `Vec::new`
-  - [ ] macro `vec!`  
+  - [x] macro `vec!`  
 
 - [x] Push values onto the end of a vector (which will grow the vector as needed)
 
@@ -79,12 +79,12 @@ v[1] = v[1] + 5;
 - [26.08.2022] Done push if length == capacity, realloc, it's having the error `[Error] realloc(): invalid next size` in the 3rd time realloc, need to check that next day. also check again the drop trait
 - [27.08.2022] Fix `[Error] realloc(): invalid next size` (realloc with wrong size!), learn *size* and *align*, finish `push` function, `Drop` trait, `get` by index, check memory leak (no leaks are possible), finish [Ryan Levick](https://youtu.be/3OL95gZgPWA) tutorial
 - [28.08.2022] Done `pop` function, understand dereference assign raw pointer (will drop its current value and that mem must be valid -> the correct way is using ptr::write), check github profiles of rust team members, look through their blogs and be inspired by them. e.g. [Ralf Jung](https://research.ralfj.de/) with his thesis about Rust lang, or [Matklad](https://matklad.github.io/resume/) and his resume, ... there are a ton of people full of enthusiasm out there coding beautiful things
+- [29.08.2022] Done marco for `myvec!`, note that the vector created by this macro will have the same capacity as the one created normally, that means I didn't create vector [with\_capacity()](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.with_capacity) even I already known the size of vector when I create it with the macro. I even ask a stupid question about this on stackoverflow ([Capacity of vectors created with macro](https://stackoverflow.com/questions/73531364/capacity-of-vectors-created-with-macro#73531450)); create more tests 
 
 
 ###### Need to cover:
 
 - Next day:  
-  - [ ] learn about macro for `vec!` new
   - [ ] implement get index by `[]`
   - [ ] check `vec` implementation in [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
 
