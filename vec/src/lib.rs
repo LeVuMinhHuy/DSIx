@@ -10,6 +10,35 @@ pub struct MyVec<T> {
     len: usize,
 }
 
+#[macro_export]
+macro_rules! myvec {
+    ( $( $x:expr ), * ) => {
+        {
+            let mut temp_vec = MyVec::new();
+            $(
+                temp_vec.push($x);
+            )*
+            temp_vec
+        }
+    };
+
+    ( $x:expr ; $y:expr ) => {
+        {
+            let mut temp_vec = MyVec::new();
+
+            if $y <= 0 {
+                panic!("Size of vector must be greater than zero");
+            };
+
+            for _i in 0..$y {
+                temp_vec.push($x);
+            }
+
+            temp_vec
+        }
+    };
+}
+
 // TODO: need to check again this drop trait to understand
 impl<T> Drop for MyVec<T> {
     fn drop(&mut self) {
@@ -140,21 +169,21 @@ impl<T> MyVec<T> {
 mod tests {
     use super::*;
 
-    //#[test]
-    //fn std_vec() {
-    //    let mut vec_sample = Vec::<u32>::new();
-    //    vec_sample.push(1);
-    //    vec_sample.push(2);
-    //    vec_sample.push(3);
-    //    vec_sample.push(4);
-    //    vec_sample.push(5);
+    #[test]
+    fn std_vec() {
+        let mut vec_sample = Vec::<u32>::new();
+        vec_sample.push(1);
+        vec_sample.push(2);
+        vec_sample.push(3);
+        vec_sample.push(4);
+        vec_sample.push(5);
 
-    //    //println!("{}", vec_sample.capacity());
+        //println!("{}", vec_sample.capacity());
 
-    //    assert_eq!(vec_sample, [1, 2, 3, 4, 5]);
-    //    assert_eq!(vec_sample.capacity(), 8);
-    //    assert_eq!(vec_sample.len(), 5)
-    //}
+        assert_eq!(vec_sample, [1, 2, 3, 4, 5]);
+        assert_eq!(vec_sample.capacity(), 8);
+        assert_eq!(vec_sample.len(), 5)
+    }
 
     #[test]
     fn my_vec() {
@@ -186,5 +215,49 @@ mod tests {
         }
 
         assert_eq!(my_vec_sample.get(1000), None);
+    }
+
+    #[test]
+    fn my_vec_macro() {
+        let mut my_vec_sample = myvec![0, 1, 2, 3, 4];
+
+        assert_eq!(my_vec_sample.capacity(), 8);
+        assert_eq!(my_vec_sample.len(), 5);
+
+        let pop_data = my_vec_sample.pop();
+
+        assert_eq!(pop_data, Some(4));
+
+        for n in 0..my_vec_sample.len() {
+            assert_eq!(my_vec_sample.get(n), Some(&(n)))
+        }
+
+        assert_eq!(my_vec_sample.get(1000), None);
+    }
+
+    #[test]
+    fn my_vec_macro_with_semicolon() {
+        let my_vec_sample: MyVec<usize> = myvec![0; 10];
+        assert_eq!(my_vec_sample.capacity(), 16);
+        assert_eq!(my_vec_sample.len(), 10);
+
+        for n in 0..my_vec_sample.len() {
+            assert_eq!(my_vec_sample.get(n), Some(&(0)))
+        }
+    }
+
+    #[test]
+    fn vec_and_vec_macro() {
+        let mut vec_macro = vec![0, 1, 2, 3, 4];
+        let mut vec = Vec::new();
+
+        for i in 0..6 {
+            vec.push(i)
+        }
+
+        vec_macro.push(5);
+
+        println!("Capacity of vec with macro: {}", vec_macro.capacity());
+        println!("Capacity of vec push: {}", vec.capacity());
     }
 }
