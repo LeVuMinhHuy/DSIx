@@ -80,21 +80,14 @@ v[1] = v[1] + 5;
 - [27.08.2022] Fix `[Error] realloc(): invalid next size` (realloc with wrong size!), learn *size* and *align*, finish `push` function, `Drop` trait, `get` by index, check memory leak (no leaks are possible), finish [Ryan Levick](https://youtu.be/3OL95gZgPWA) tutorial
 - [28.08.2022] Done `pop` function, understand dereference assign raw pointer (will drop its current value and that mem must be valid -> the correct way is using ptr::write), check github profiles of rust team members, look through their blogs and be inspired by them. e.g. [Ralf Jung](https://research.ralfj.de/) with his thesis about Rust lang, or [Matklad](https://matklad.github.io/resume/) and his resume, ... there are a ton of people full of enthusiasm out there coding beautiful things
 - [29.08.2022] Done marco for `myvec!`, note that the vector created by this macro will have the same capacity as the one created normally, that means I didn't create vector [with\_capacity()](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.with_capacity) even I already known the size of vector when I create it with the macro. I even ask a stupid question about this on stackoverflow ([Capacity of vectors created with macro](https://stackoverflow.com/questions/73531364/capacity-of-vectors-created-with-macro#73531450)); create more tests 
+- [30.08.2022] Read [IntoIter](https://doc.rust-lang.org/nomicon/vec/vec-into-iter.html) and decided not implement it, we will finish the implmentation of vector in here. Will record the video to review, re-implement and discuss later. Also, I will take some days off (at most 1 week - by 07.09.2022) to resolve some critical tickets from work, take the holiday, build up the good habits again then come back to HCMC and continue on this. 
+
+Thank to myself that I've already finished this very first data structure. Rust is hard, but I'm proud that I'm learning it. Half a month without missing any day, it is extremely hard for me to do. Thank me!
+
+And thank you, to anyone read this line.
 
 
 ###### Need to cover:
-
-- Next day:  
-  - [ ] implement get index by `[]`
-  - [ ] check `vec` implementation in [Implement vec by Rustonomicon - Steps](https://doc.rust-lang.org/nomicon/vec/vec.html)
-
-
-- Statuses:
-  - Lifetime:  ![](https://progress-bar.dev/80)
-  - Smart pointer:  ![](https://progress-bar.dev/60)
-  - Drop check: ![](https://progress-bar.dev/01)
-  - Raw pointer: ![](https://progress-bar.dev/75)
-
 - Record a video for re-implement and explain what I've learned
 
 #### References:
