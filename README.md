@@ -4,13 +4,14 @@
 | ------------------ | :----: | :-----------------------------------------------------------------------------------------------: |
 | 1. Array           |        |                                                                                                   |
 |                    |        |
+| 1.0. Code the DS   |  Done  |                                           William Fiset                                           |
 | 1.1. Reverse Array |  Done  |     [Hackerrank](https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true#!)     |
 | 1.2. Dynamic Array |  Done  |    [Hackerrank](https://www.hackerrank.com/challenges/dynamic-array/problem?isFullScreen=true)    |
 | 1.3. Left Rotation |  Done  | [Hackerrank](https://www.hackerrank.com/challenges/array-left-rotation/problem?isFullScreen=true) |
 |                    |        |
-| 2. Dynamic Array   |        |                                                                                                   |
+| 2. Linked list     |        |                                                                                                   |
 |                    |        |
-| 2.1. Initialize    |  Done  |                                           William Fiset                                           |
+| 2.0. Code the DS   |        |                                                                                                   |
 
 </center>
 
