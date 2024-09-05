@@ -1,14 +1,16 @@
 <center>
 
-| Data structure     | Python |                                           Note                                            |
-| ------------------ | :----: | :---------------------------------------------------------------------------------------: |
-| 1. Array           |        |                                                                                           |
+| Data structure     | Python |                                               Note                                                |
+| ------------------ | :----: | :-----------------------------------------------------------------------------------------------: |
+| 1. Array           |        |                                                                                                   |
 |                    |        |
-| 1.1. Reverse Array |  Done  | [Hackerrank](https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true#!) |
+| 1.1. Reverse Array |  Done  |     [Hackerrank](https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true#!)     |
+| 1.2. Dynamic Array |  Done  |    [Hackerrank](https://www.hackerrank.com/challenges/dynamic-array/problem?isFullScreen=true)    |
+| 1.3. Left Rotation |  Done  | [Hackerrank](https://www.hackerrank.com/challenges/array-left-rotation/problem?isFullScreen=true) |
 |                    |        |
-| 2. Dynamic Array   |        |                                                                                           |
+| 2. Dynamic Array   |        |                                                                                                   |
 |                    |        |
-| 2.1. Initialize    |  Done  |                                       William Fiset                                       |
+| 2.1. Initialize    |  Done  |                                           William Fiset                                           |
 
 </center>
 
