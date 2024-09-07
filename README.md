@@ -8,6 +8,7 @@
 | 1.1. Reverse Array |  Done  |     [Hackerrank](https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true#!)     |
 | 1.2. Dynamic Array |  Done  |    [Hackerrank](https://www.hackerrank.com/challenges/dynamic-array/problem?isFullScreen=true)    |
 | 1.3. Left Rotation |  Done  | [Hackerrank](https://www.hackerrank.com/challenges/array-left-rotation/problem?isFullScreen=true) |
+| 1.4. Sparse Arrays |  Done  |    [Hackerrank](https://www.hackerrank.com/challenges/sparse-arrays/problem?isFullScreen=true)    |
 |                    |        |
 | 2. Linked list     |        |                                                                                                   |
 |                    |        |
