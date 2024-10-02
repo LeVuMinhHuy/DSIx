@@ -13,7 +13,7 @@
 |                         |        |
 | 2. Linked list          |        |                                                                                                   |
 |                         |        |
-| 2.0. Code the DS        |        |                                                                                                   |
+| 2.0. Code the DS data   |        |                                                                                                   |
 
 </center>
 
